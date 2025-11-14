@@ -4,9 +4,10 @@ from .models import Story, Comment
 
 @admin.register(Story)
 class StoryAdmin(admin.ModelAdmin):
-    list_display = ['title', 'author', 'created_at']
+    list_display = ['title', 'slug', 'author', 'created_at']
     list_filter = ['created_at', 'author']
     search_fields = ['title', 'content']
+    prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'created_at'
 
 @admin.register(Comment)
