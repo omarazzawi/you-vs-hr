@@ -13,7 +13,7 @@
 /* Global Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: red;
+    background-color: #f8f9fa;
 }
 
 /* Navigation */
@@ -31,7 +31,17 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
     border: none;
     border-radius: 8px;
-    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px; 
+    position: relative
 }
 
 .card:hover {
@@ -48,6 +58,8 @@ body {
 .card-text {
     color: #555;
     line-height: 1.6;
+    flex-grow: 1;
+    padding-bottom: 50px; 
 }
 
 .card-footer {
@@ -61,6 +73,12 @@ body {
     border-color: var(--secondary-color);
     padding: 10px 20px;
     border-radius: 5px;
+}
+
+.card-body .btn {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
 }
 
 .btn-primary:hover {
