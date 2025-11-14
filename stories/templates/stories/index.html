@@ -1,0 +1,42 @@
+{% extends 'stories/base.html' %}
+
+{% block title %}Home - Recruitment Horror Stories{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-bold">You VS HR</h1>
+    <p class="lead">Share and read real experiences from job seekers about recruiters, HR departments, and hiring processes</p>
+</div>
+
+{% if stories %}
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for story in stories %}
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ story.title }}</h5>
+                        <p class="card-text">
+                            {{ story.content|truncatewords:30 }}
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <small class="text-muted">
+                            By {{ story.author.username }} • {{ story.created_at|date:"M d, Y" }}
+                        </small>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="alert alert-info text-center">
+        <h4>No stories yet!</h4>
+        <p>Be the first to share your recruitment experience.</p>
+        {% if user.is_authenticated %}
+            <a href="#" class="btn btn-primary">Share Your Story</a>
+        {% else %}
+            <a href="{% url 'register' %}" class="btn btn-primary">Register to Share</a>
+        {% endif %}
+    </div>
+{% endif %}
+{% endblock %}
