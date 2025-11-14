@@ -49,3 +49,14 @@ def user_logout(request):
     logout(request)
     messages.success(request, 'Logged out successfully!')
     return redirect('index')
+
+def story_detail(request, slug):
+    """Display individual story with all approved comments"""
+    story = get_object_or_404(Story, slug=slug)
+    comments = story.comments.filter(approved=True).order_by('-created_at')
+    
+    context = {
+        'story': story,
+        'comments': comments,
+    }
+    return render(request, 'stories/story_detail.html', context)
