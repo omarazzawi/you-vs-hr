@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
-from .forms import RegisterForm
+from .forms import RegisterForm, StoryForm
 from .models import Story
 
 def index(request):
@@ -60,3 +61,21 @@ def story_detail(request, slug):
         'comments': comments,
     }
     return render(request, 'stories/story_detail.html', context)
+
+
+
+@login_required
+def create_story(request):
+    """Create a new story (logged-in users only)"""
+    if request.method == 'POST':
+        form = StoryForm(request.POST)
+        if form.is_valid():
+            story = form.save(commit=False)
+            story.author = request.user
+            story.save()
+            messages.success(request, 'Your story has been published successfully!')
+            return redirect('story_detail', slug=story.slug)
+    else:
+        form = StoryForm()
+    
+    return render(request, 'stories/create_story.html', {'form': form})
