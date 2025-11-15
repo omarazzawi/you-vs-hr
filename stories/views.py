@@ -105,3 +105,23 @@ def edit_story(request, slug):
         'editing': True,
     }
     return render(request, 'stories/edit_story.html', context)
+
+
+
+@login_required
+def delete_story(request, slug):
+    """Delete a story (author only)"""
+    story = get_object_or_404(Story, slug=slug)
+    
+    # Check if user is the author
+    if request.user != story.author:
+        messages.error(request, 'You can only delete your own stories.')
+        return redirect('story_detail', slug=story.slug)
+    
+    if request.method == 'POST':
+        story_title = story.title
+        story.delete()  # This also deletes all associated comments (cascade)
+        messages.success(request, f'Story "{story_title}" has been deleted.')
+        return redirect('index')
+    
+    return render(request, 'stories/delete_story.html', {'story': story})

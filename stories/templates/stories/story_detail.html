@@ -25,6 +25,7 @@
                 <a href="{% url 'index' %}" class="btn btn-secondary">← Back to Stories</a>
                 {% if user == story.author %}
                 <a href="{% url 'edit_story' story.slug %}" class="btn btn-warning">Edit Story</a>
+                <a href="{% url 'delete_story' story.slug %}" class="btn btn-danger">Delete Story</a>
                 {% endif %}
             </div>
         </div>

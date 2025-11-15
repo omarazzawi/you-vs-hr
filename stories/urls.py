@@ -8,5 +8,6 @@ urlpatterns = [
     path('logout/', views.user_logout, name='logout'),
     path('story/create/', views.create_story, name='create_story'), 
     path('story/<slug:slug>/edit/', views.edit_story, name='edit_story'),
+    path('story/<slug:slug>/delete/', views.delete_story, name='delete_story'), 
     path('story/<slug:slug>/', views.story_detail, name='story_detail'), # <<<< WARNING: Order matters! Slug patterns catch everything - keep them last
 ]

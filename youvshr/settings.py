@@ -27,7 +27,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = False
+"""
+⚠️  IMPORTANT DEPLOYMENT NOTES:
+- Set DEBUG = False before pushing to GitHub or deploying
+- Update ALLOWED_HOSTS with your domain when DEBUG = False
+- Configure proper database and static files for production
+"""
 
 ALLOWED_HOSTS = ['.herokuapp.com',
                  '.127.0.0.1',]
