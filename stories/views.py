@@ -63,7 +63,7 @@ def story_detail(request, slug):
     return render(request, 'stories/story_detail.html', context)
 
 
-
+# Logged- in for users section
 @login_required
 def create_story(request):
     """Create a new story (logged-in users only)"""
@@ -79,3 +79,29 @@ def create_story(request):
         form = StoryForm()
     
     return render(request, 'stories/create_story.html', {'form': form})
+
+
+def edit_story(request, slug):
+    """Edit an existing story (author only)"""
+    story = get_object_or_404(Story, slug=slug)
+    
+    # << Check if user is the author
+    if request.user != story.author:
+        messages.error(request, 'You can only edit your own stories.')
+        return redirect('story_detail', slug=story.slug)
+    
+    if request.method == 'POST':
+        form = StoryForm(request.POST, instance=story)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your story has been updated successfully!')
+            return redirect('story_detail', slug=story.slug)
+    else:
+        form = StoryForm(instance=story)
+    
+    context = {
+        'form': form,
+        'story': story,
+        'editing': True,
+    }
+    return render(request, 'stories/edit_story.html', context)

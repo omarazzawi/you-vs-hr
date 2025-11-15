@@ -13,7 +13,7 @@
                     <small>
                         Posted by <strong>{{ story.author.username }}</strong> on {{ story.created_at|date:"F d, Y" }}
                         {% if story.updated_at != story.created_at %}
-                            <br><em>(Edited: {{ story.updated_at|date:"F d, Y" }})</em>
+                        <br><em>(Edited: {{ story.updated_at|date:"F d, Y" }})</em>
                         {% endif %}
                     </small>
                 </p>
@@ -23,6 +23,9 @@
             </div>
             <div class="card-footer bg-transparent">
                 <a href="{% url 'index' %}" class="btn btn-secondary">← Back to Stories</a>
+                {% if user == story.author %}
+                <a href="{% url 'edit_story' story.slug %}" class="btn btn-warning">Edit Story</a>
+                {% endif %}
             </div>
         </div>
 
@@ -33,23 +36,24 @@
             </div>
             <div class="card-body">
                 {% if comments %}
-                    {% for comment in comments %}
-                        <div class="comment mb-3 pb-3 {% if not forloop.last %}border-bottom{% endif %}">
-                            <p class="mb-2">{{ comment.content }}</p>
-                            <small class="text-muted">
-                                By <strong>{{ comment.author.username }}</strong> on {{ comment.created_at|date:"M d, Y" }}
-                            </small>
-                        </div>
-                    {% endfor %}
+                {% for comment in comments %}
+                <div class="comment mb-3 pb-3 {% if not forloop.last %}border-bottom{% endif %}">
+                    <p class="mb-2">{{ comment.content }}</p>
+                    <small class="text-muted">
+                        By <strong>{{ comment.author.username }}</strong> on {{ comment.created_at|date:"M d, Y" }}
+                    </small>
+                </div>
+                {% endfor %}
                 {% else %}
-                    <p class="text-muted">No comments yet. Be the first to comment!</p>
+                <p class="text-muted">No comments yet. Be the first to comment!</p>
                 {% endif %}
 
                 <!-- Login prompt for non-authenticated users -->
                 {% if not user.is_authenticated %}
-                    <div class="alert alert-info mt-4">
-                        <a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">register</a> to comment on this story.
-                    </div>
+                <div class="alert alert-info mt-4">
+                    <a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">register</a> to comment on
+                    this story.
+                </div>
                 {% endif %}
             </div>
         </div>
