@@ -1,122 +1,27 @@
-/* You VS HR - Enhanced CSS with Better Typography */
+/* You VS HR - Cleaned CSS */
 
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --danger-color: #e74c3c;
     --success-color: #27ae60;
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --font-size-base: 1rem;
-    --line-height-base: 1.6;
 }
 
 body {
-    font-family: var(--font-family);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f9fa;
-    color: #333;
 }
 
-/* Improved Typography for Pages */
-.container h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-}
-
-.container h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1.25rem;
-    color: var(--primary-color);
-}
-
-.container h3 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.container h4 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 0.75rem;
-    color: var(--primary-color);
-}
-
-.container h5 {
-    font-size: 1.25rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-}
-
-.container h6 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-}
-
-/* Paragraph and text styles */
-.container p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 1rem;
-    color: #444;
-}
-
-.container .lead {
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: #666;
-}
-
-/* Card text improvements */
-.card-body p,
-.card-body .card-text {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
-}
-
-.card-title {
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 1.25rem;
-}
-
-/* Alert text improvements */
-.alert {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.alert h5 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Navigation */
 .navbar-brand {
     font-size: 2rem;
     letter-spacing: 1px;
-    font-weight: 700;
-}
-
-.navbar-nav .nav-link {
-    font-size: 1.1rem;
-    font-weight: 500;
 }
 
 .navbar {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Cards */
+/* SIMPLIFIED card styles - removed problematic properties */
 .card {
     transition: transform 0.2s, box-shadow 0.2s;
     border: none;
@@ -128,95 +33,49 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Buttons */
+.card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.card-text {
+    color: #555;
+    line-height: 1.6;
+}
+
 .btn-primary {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
     padding: 10px 20px;
     border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: 500;
 }
 
 .btn-primary:hover {
     background-color: #2980b9;
     border-color: #2980b9;
 }
-
-/* Footer */
+/* Footer text color */
 footer {
     box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+}
+footer .container p {
+    color: #f8f9fa;
 }
 
-footer p {
-    font-size: 1.1rem;
-    margin-bottom: 0;
-}
 
-/* Display classes */
 .display-4 {
-    color: var(--primary-color);
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-/* About page specific improvements */
-.about-container p,
-.about-container .card-text {
-    font-size: 1.1rem;
-    line-height: 1.7;
-}
-
-/* Form controls */
-.form-control {
-    font-size: 1.1rem;
-    padding: 0.75rem;
-}
-
-.form-label {
-    font-size: 1.1rem;
-    font-weight: 500;
     color: var(--primary-color);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    body {
-        font-size: 0.95rem;
-    }
-    
-    .container h1 {
-        font-size: 2rem;
-    }
-    
-    .container h2 {
-        font-size: 1.75rem;
-    }
-    
-    .container h3 {
-        font-size: 1.5rem;
-    }
-    
-    .container p {
-        font-size: 1rem;
-    }
-    
     .card-title {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .display-4 {
-        font-size: 2rem;
-    }
-    
-    .navbar-brand {
-        font-size: 1.75rem;
-    }
-    
-    .btn-primary {
-        font-size: 1rem;
-        padding: 8px 16px;
+        font-size: 2.5rem;
     }
 }
 

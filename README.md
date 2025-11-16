@@ -1,9 +1,11 @@
 # YOU VS HR
 
 **🌐Live Application on Heroku** 
-Access the platform here: [you-vs-hr](https://you-vs-hr-f560f6ced83c.herokuapp.com/)
+Access the platform here: [you-vs-hr](https://you-vs-hr-f560f6ced83c.herokuapp.com/)  
+
 **GitHub**
-[you-vs-hr](https://github.com/omarazzawi/you-vs-hr)
+[you-vs-hr](https://github.com/omarazzawi/you-vs-hr)  
+
 **Project Board:**
 [View Project Progress](https://github.com/users/omarazzawi/projects/11)
 
@@ -140,6 +142,58 @@ You VS HR is a Django-based web platform built for job seekers to share and anal
      {% endfor %}
      {% endif %}  < ✅ Properly closed 'if' block 
 
+
+## Deployment (Heroku)
+### Prerequisites
+
+- A Heroku account
+
+- A linked GitHub repository containing this project
+
+- Required environment variables (not committed to the repo)
+
+- GitHub connected to Heroku
+
+##### 1. Create a New Heroku App
+
+- Log in to your Heroku Dashboard.
+
+- Click New → Create new app.
+
+- Enter a unique app name and select your region.
+
+- Click Create app.
+
+##### 2. Connect the App to GitHub
+
+- In your Heroku app, go to the Deploy tab.
+
+- Under Deployment method, choose GitHub.
+
+- Search for your repository (e.g., you-vs-hr) and click Connect.
+
+#### 3. Set Your Config Vars
+
+Go to Settings → Config Vars and add the following environment variables:
+
+  Key = Value 
+- DATABASE_URL = xxxxx
+- DISABLE_COLLECTSTATIC =	1 
+- SECRET_KEY	= xxxxxx
+
+#### 4. Deploy the Application
+
+- In the Deploy tab, scroll to Manual deploy.
+
+- Select the branch you want to deploy (typically main).
+
+- Click Deploy Branch.
+
+- Wait for the build to finish.
+
+- Click Open App to launch your deployed application.
+
+
 ## Credits
 
 - **Django 5 By Example** [Django 5 By Example](https://www.amazon.se/-/en/Antonio-Mel%C3%A9/dp/1805125451)
@@ -148,5 +202,5 @@ You VS HR is a Django-based web platform built for job seekers to share and anal
 - **Abdelrahman Gamal** Django tutorial | كورس دجانجو | ما هو الدجانجو؟
 - **AI - clude** - Comment editing, function descriptions, and documentation assistance
 - **AI - DeepSeek** - Functionality explanations, comment editing, and README file editing
-- **Assessment Insights: PP4: What our Assessors Wish You Knew** [Lucy Rush](https://events.codeinstitute.net/events/details/code-institute-events-hub-presents-assessment-insights-pp4-what-our-assessors-wish-you-knew/)
+- **Assessment Insights: PP4: What our Assessors Wish You Knew**[LucyRCode-Institut] (https://events.codeinstitute.net/events/details/code-institute-events-hub-presents-assessment-insights-pp4-what-our-assessors-wish-you-knew/)
 - **draw.io** - Diagrams and visual representations
