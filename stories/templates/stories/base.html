@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static 'stories/css/style.css' %}">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -25,10 +25,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'index' %}">Home</a>
                     </li>
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'create_story' %}">Share Story</a>
                     </li>
-                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <span class="nav-link text-light">Welcome, {{ user.username }}</span>
                     </li>
@@ -61,15 +61,15 @@
     {% endif %}
 
     <!-- Main Content -->
-    <main class="container my-5">
+    <main class="container my-5 flex-grow-1">
         {% block content %}
         {% endblock %}
     </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3 mt-5">
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
         <div class="container">
-            <p class="mb-0">&copy; 2025 You VS HR - Share Your Recruitment Experiences</p>
+            <p class="mb-0">omar al-azzawi &copy; 2025 You VS HR - Share Your Recruitment Experiences</p>
         </div>
     </footer>
 
