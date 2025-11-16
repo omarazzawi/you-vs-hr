@@ -1,0 +1,74 @@
+{% extends 'stories/base.html' %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center about-content">
+    <div class="col-lg-10">
+        <h1 class="display-4 mb-3">{{ page.title }}</h1>
+        
+        {% if page.content %}
+            <div class="alert alert-info mb-3">
+                {{ page.content|linebreaks }}
+            </div>
+        {% endif %}
+
+        <!-- Mission Section -->
+        {% if page.mission %}
+        <div class="card shadow-sm mb-3">
+            <div class="card-body">
+                <h3 class="card-title">Our Mission</h3>
+                <div>{{ page.mission|linebreaks }}</div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Community Guidelines -->
+        {% if page.guidelines %}
+        <div class="card shadow-sm mb-3">
+            <div class="card-header bg-info text-white">
+                <h3 class="mb-0">Community Guidelines</h3>
+            </div>
+            <div class="card-body">
+                {{ page.guidelines|linebreaks }}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Privacy Policy -->
+        {% if page.privacy_policy %}
+        <div class="card shadow-sm mb-3">
+            <div class="card-header bg-warning">
+                <h3 class="mb-0">Privacy & Your Data</h3>
+            </div>
+            <div class="card-body">
+                {{ page.privacy_policy|linebreaks }}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Terms of Use -->
+        {% if page.terms_of_use %}
+        <div class="card shadow-sm mb-3">
+            <div class="card-header bg-danger text-white">
+                <h3 class="mb-0">Terms of Use</h3>
+            </div>
+            <div class="card-body">
+                {{ page.terms_of_use|linebreaks }}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Only show registration prompt to users who are NOT logged in -->
+        {% if not user.is_authenticated %}
+        <div class="alert alert-success mb-3">
+            <h5>Ready to Share Your Story?</h5>
+            <p class="mb-0">
+                <a href="{% url 'register' %}" class="alert-link">Register now</a> and join our community of job seekers 
+                fighting for transparency in hiring.
+            </p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

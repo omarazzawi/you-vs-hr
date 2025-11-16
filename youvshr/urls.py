@@ -19,9 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('stories.urls')), 
+    path('', include('stories.urls')),
+    path('', include('pages.urls')),
 ]
-
-# Login settings
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'index'
