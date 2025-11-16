@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Story
+from .models import Story, Comment
 
 
 class RegisterForm(UserCreationForm):
@@ -36,4 +36,19 @@ class StoryForm(forms.ModelForm):
         labels = {
             'title': 'Story Title',
             'content': 'Your Story',
+        }
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
+        widgets = {
+            'content': forms.Textarea(attrs={
+                'class': 'form-control',
+                'rows': 4,
+                'placeholder': 'Share your thoughts or similar experience...'
+            }),
+        }
+        labels = {
+            'content': 'Your Comment',
         }

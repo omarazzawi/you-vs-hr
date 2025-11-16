@@ -3,8 +3,8 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
-from .forms import RegisterForm, StoryForm
-from .models import Story
+from .forms import RegisterForm, StoryForm, CommentForm
+from .models import Story, Comment
 
 def index(request):
     
@@ -56,9 +56,24 @@ def story_detail(request, slug):
     story = get_object_or_404(Story, slug=slug)
     comments = story.comments.filter(approved=True).order_by('-created_at')
     
+    # Handle comment submission
+    if request.method == 'POST' and request.user.is_authenticated:
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.story = story
+            comment.author = request.user
+            comment.approved = False  # Requires admin approval
+            comment.save()
+            messages.success(request, 'Your comment has been submitted and is awaiting approval.')
+            return redirect('story_detail', slug=story.slug)
+    else:
+        comment_form = CommentForm()
+    
     context = {
         'story': story,
         'comments': comments,
+        'comment_form': comment_form,
     }
     return render(request, 'stories/story_detail.html', context)
 
