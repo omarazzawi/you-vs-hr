@@ -140,3 +140,51 @@ def delete_story(request, slug):
         return redirect('index')
     
     return render(request, 'stories/delete_story.html', {'story': story})
+
+
+@login_required
+def edit_comment(request, comment_id):
+    """Edit a comment (author only)"""
+    comment = get_object_or_404(Comment, id=comment_id)
+    
+    # Check if user is the comment author
+    if request.user != comment.author:
+        messages.error(request, 'You can only edit your own comments.')
+        return redirect('story_detail', slug=comment.story.slug)
+    
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            updated_comment = form.save(commit=False)
+            updated_comment.approved = False  # Reset to pending approval after edit
+            updated_comment.save()
+            messages.success(request, 'Your comment has been updated and is awaiting approval.')
+            return redirect('story_detail', slug=comment.story.slug)
+    else:
+        form = CommentForm(instance=comment)
+    
+    context = {
+        'form': form,
+        'comment': comment,
+        'story': comment.story,
+    }
+    return render(request, 'stories/edit_comment.html', context)
+
+
+@login_required
+def delete_comment(request, comment_id):
+    """Delete a comment (author only)"""
+    comment = get_object_or_404(Comment, id=comment_id)
+    story_slug = comment.story.slug
+    
+    # Check if user is the comment author
+    if request.user != comment.author:
+        messages.error(request, 'You can only delete your own comments.')
+        return redirect('story_detail', slug=story_slug)
+    
+    if request.method == 'POST':
+        comment.delete()
+        messages.success(request, 'Your comment has been deleted.')
+        return redirect('story_detail', slug=story_slug)
+    
+    return render(request, 'stories/delete_comment.html', {'comment': comment})

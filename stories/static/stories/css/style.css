@@ -75,7 +75,7 @@ body {
     border-radius: 5px;
 }
 
-.card-body .btn-sm {
+.card-body > .btn-sm {
     position: absolute;
     bottom: 15px;
     left: 15px;

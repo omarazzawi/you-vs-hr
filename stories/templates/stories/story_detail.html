@@ -13,7 +13,7 @@
                     <small>
                         Posted by <strong>{{ story.author.username }}</strong> on {{ story.created_at|date:"F d, Y" }}
                         {% if story.updated_at != story.created_at %}
-                            <br><em>(Edited: {{ story.updated_at|date:"F d, Y" }})</em>
+                        <br><em>(Edited: {{ story.updated_at|date:"F d, Y" }})</em>
                         {% endif %}
                     </small>
                 </p>
@@ -23,10 +23,10 @@
             </div>
             <div class="card-footer bg-transparent">
                 <a href="{% url 'index' %}" class="btn btn-secondary">← Back to Stories</a>
-                
+
                 {% if user == story.author %}
-                    <a href="{% url 'edit_story' story.slug %}" class="btn btn-warning">Edit Story</a>
-                    <a href="{% url 'delete_story' story.slug %}" class="btn btn-danger">Delete Story</a>
+                <a href="{% url 'edit_story' story.slug %}" class="btn btn-warning">Edit Story</a>
+                <a href="{% url 'delete_story' story.slug %}" class="btn btn-danger">Delete Story</a>
                 {% endif %}
             </div>
         </div>
@@ -38,46 +38,58 @@
             </div>
             <div class="card-body">
                 {% if comments %}
-                    {% for comment in comments %}
-                        <div class="comment mb-3 pb-3 {% if not forloop.last %}border-bottom{% endif %}">
-                            <p class="mb-2">{{ comment.content }}</p>
-                            <small class="text-muted">
-                                By <strong>{{ comment.author.username }}</strong> on {{ comment.created_at|date:"M d, Y" }}
-                            </small>
-                        </div>
-                    {% endfor %}
-                {% else %}
-                    <p class="text-muted">No comments yet. Be the first to comment!</p>
-                {% endif %}
+                {% for comment in comments %}
+                <div class="comment mb-3 pb-3 {% if not forloop.last %}border-bottom{% endif %}">
+                    <p class="mb-2">{{ comment.content }}</p>
+                    <small class="text-muted">
+                        By <strong>{{ comment.author.username }}</strong> on {{ comment.created_at|date:"M d, Y" }}
+                        {% if comment.updated_at != comment.created_at %}
+                        <em>(edited)</em>
+                        {% endif %}
+                    </small>
 
+                    {% if user == comment.author %}
+                    <div class="mt-2">
+                        <a href="{% url 'edit_comment' comment.id %}" class="btn btn-sm btn-warning"
+                            style="position: static; display: inline-block;">Edit</a>
+                        <a href="{% url 'delete_comment' comment.id %}" class="btn btn-sm btn-danger"
+                            style="position: static; display: inline-block; margin-left: 5px;">Delete</a>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                {% else %}
+                <p class="text-muted">No comments yet. Be the first to comment!</p>
+                {% endif %}
                 <!-- Add Comment Form (only for logged-in users) -->
                 {% if user.is_authenticated %}
-                    <div class="mt-4 pt-4 border-top">
-                        <h5>Add a Comment</h5>
-                        <p class="text-muted small">
-                            <i class="bi bi-info-circle"></i> Your comment will be reviewed by moderators before appearing.
-                        </p>
-                        
-                        <form method="post">
-                            {% csrf_token %}
-                            
-                            {% if comment_form.content.errors %}
-                                <div class="alert alert-danger">
-                                    {{ comment_form.content.errors }}
-                                </div>
-                            {% endif %}
-                            
-                            <div class="mb-3">
-                                {{ comment_form.content }}
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary">Submit Comment</button>
-                        </form>
-                    </div>
+                <div class="mt-4 pt-4 border-top">
+                    <h5>Add a Comment</h5>
+                    <p class="text-muted small">
+                        <i class="bi bi-info-circle"></i> Your comment will be reviewed by moderators before appearing.
+                    </p>
+
+                    <form method="post">
+                        {% csrf_token %}
+
+                        {% if comment_form.content.errors %}
+                        <div class="alert alert-danger">
+                            {{ comment_form.content.errors }}
+                        </div>
+                        {% endif %}
+
+                        <div class="mb-3">
+                            {{ comment_form.content }}
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit Comment</button>
+                    </form>
+                </div>
                 {% else %}
-                    <div class="alert alert-info mt-4">
-                        <a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">register</a> to comment on this story.
-                    </div>
+                <div class="alert alert-info mt-4">
+                    <a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">register</a> to comment on
+                    this story.
+                </div>
                 {% endif %}
             </div>
         </div>
