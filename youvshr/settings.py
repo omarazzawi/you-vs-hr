@@ -10,9 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
-import dj_database_url #<<< database configuration
+import dj_database_url  # Database configuration
 
-if os.path.isfile('env.py'): # <<< This file does not exist on the deployed version
+if os.path.isfile('env.py'):
+    # This file does not exist on the deployed version
     import env
 from pathlib import Path
 
@@ -24,20 +25,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
 DEBUG = False
-"""
-⚠️  IMPORTANT DEPLOYMENT NOTES:
-- Set DEBUG = False before pushing to GitHub or deploying
-- Update ALLOWED_HOSTS with your domain when DEBUG = False
-- Configure proper database and static files for production
-"""
 
-ALLOWED_HOSTS = ['.herokuapp.com',
-                 '.127.0.0.1',]
+# IMPORTANT DEPLOYMENT NOTES:
+# - Set DEBUG = False before pushing to GitHub or deploying
+# - Update ALLOWED_HOSTS with your domain when DEBUG = False
+# - Configure proper database and static files for production
+
+ALLOWED_HOSTS = [
+    '.herokuapp.com',
+    '.127.0.0.1',
+    '.amiresponsive.com',
+]
 
 
 # Application definition
@@ -86,15 +88,16 @@ WSGI_APPLICATION = 'youvshr.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
-
-DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL")) }
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
 
 # Password validation
@@ -102,16 +105,20 @@ DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL")) }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'NumericPasswordValidator',
     },
 ]
 
@@ -132,10 +139,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles' # <<< Conect the CSS
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Connect the CSS
 
-STATICFILES_DIRS = [   BASE_DIR / "stories" / "static",
-    
+STATICFILES_DIRS = [
+    BASE_DIR / "stories" / "static",
 ]
 
 # Default primary key field type

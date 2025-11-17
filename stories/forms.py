@@ -6,19 +6,22 @@ from .models import Story, Comment
 
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(required=False)
-    
+
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
-    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        
+
         for field in self.fields:
             self.fields[field].widget.attrs.update({'class': 'form-control'})
 
-# ModelForm for creating and editing Story objects
+
 class StoryForm(forms.ModelForm):
+    """
+    Form for creating and editing Story objects.
+    """
     class Meta:
         model = Story
         fields = ['title', 'content']
@@ -30,7 +33,10 @@ class StoryForm(forms.ModelForm):
             'content': forms.Textarea(attrs={
                 'class': 'form-control',
                 'rows': 10,
-                'placeholder': 'Share your experience with HR, recruiters, or the hiring process...'
+                'placeholder': (
+                    'Share your experience with HR, recruiters, or the '
+                    'hiring process...'
+                )
             }),
         }
         labels = {
@@ -38,7 +44,11 @@ class StoryForm(forms.ModelForm):
             'content': 'Your Story',
         }
 
+
 class CommentForm(forms.ModelForm):
+    """
+    Form for creating Comment objects.
+    """
     class Meta:
         model = Comment
         fields = ['content']
