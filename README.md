@@ -350,7 +350,7 @@ messages.success(request, 'Your comment is awaiting approval.')
 ### Backend
 - **Django 5.2.8**: Web framework
 - **Python 3.12.10**: Programming language
-- **PostgreSQL**: Production database (via Neon)
+- **PostgreSQL**: Production database
 - **dj-database-url**: Database configuration
 - **psycopg2**: PostgreSQL adapter
 
@@ -520,6 +520,11 @@ Resource
 
 ### Bug Fixes
 
+##### Don't make my mistake!
+
+Before I even started, the biggest mistake I made in this project: **I built the CSS before I finished the project** and that impacted everything. I had to delete and rebuild the CSS many times.
+
+
 #### 1. Virtual Environment Conflicts
 - **Issue**: Multiple Python virtual environments causing version conflicts
 - **Problem**: Having several environments (my_env_312, venv, env) created confusion
@@ -568,16 +573,7 @@ comment.author.username
 - **Problem**: Varying content heights causing inconsistent positioning
 - **Solution**: Applied Flexbox with auto margin
 ```css
-.card-body {
-    display: flex;
-    flex-direction: column;
-}
-.card-text {
-    flex-grow: 1;
-}
-.card-body .btn {
-    margin-top: auto;
-}
+
 ```
 
 #### 7. Django Import Error
@@ -651,7 +647,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 - Heroku account
 - GitHub repository
-- PostgreSQL database (Neon or ElephantSQL)
+- PostgreSQL database
 
 ### Environment Variables
 
@@ -790,6 +786,9 @@ Full Stack Developer in Training
 [GitHub](https://github.com/omarazzawi) | [LinkedIn](https://www.linkedin.com/in/omar-alazzawi/) 
 
 ---
+
+
+
 
 *Last Updated: November 2025*
 *Django 5.2.8 | Python 3.12,10 | Bootstrap 5*
