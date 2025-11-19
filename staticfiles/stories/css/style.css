@@ -1,0 +1,96 @@
+/* You VS HR - Cleaned CSS */
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --danger-color: #e74c3c;
+    --success-color: #27ae60;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* SIMPLIFIED card styles - removed problematic properties */
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    border-radius: 8px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.card-text {
+    color: #555;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+/* Footer text color */
+footer {
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    font-size: 1.25rem;
+}
+footer .container p {
+    color: #f8f9fa;
+}
+
+
+.display-4 {
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1rem;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Loading and animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-in;
+}

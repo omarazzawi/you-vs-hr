@@ -380,6 +380,7 @@ gunicorn==20.1.0
 psycopg2==2.9.11
 sqlparse==0.5.3
 tzdata==2025.2
+whitenoise==6.11.0
 ```
 
 ---
