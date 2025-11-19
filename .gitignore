@@ -4,6 +4,7 @@ my_env_312/
 *.log
 local_settings.py
 /media
+/staticfiles
 # Python
 __pycache__/
 *.pyc
