@@ -1,2 +1,1 @@
-release: python manage.py collectstatic --noinput
-web: gunicorn youvshr.wsgi
+web: gunicorn youvshr.wsgi --log-file -
