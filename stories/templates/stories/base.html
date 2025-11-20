@@ -23,17 +23,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'index' %}">Home</a>
+                        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                            <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="/about/">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'resources' %}">Resources</a>
+                        <a class="nav-link {% if request.path == '/resources/' %}active{% endif %}" href="/resources/">Resources</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'create_story' %}">Share Story</a>
+                            <a class="nav-link {% if '/story/create/' in request.path %}active{% endif %}" href="/story/create/">Share Story</a>
                     </li>
                     <li class="nav-item">
                         <span class="nav-link text-light">Welcome, {{ user.username }}</span>

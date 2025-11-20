@@ -31,7 +31,7 @@
                                 </div>
                             {% endif %}
                             {% if field.help_text %}
-                                <div class="form-text text-muted d-block">
+                                <div id="{{ field.id_for_label }}_helptext" class="form-text text-muted d-block">
                                     {{ field.help_text|safe }}
                                 </div>
                             {% endif %}

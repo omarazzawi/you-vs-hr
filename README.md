@@ -2,7 +2,7 @@
 
 A Django-based platform for job seekers to share and read real experiences with recruiters, HR departments, and hiring processes.
 
-![You VS HR Homepage](screenshot-placeholder.png)
+![You VS HR Homepage](https://private-user-images.githubusercontent.com/201580038/516864886-7b504a4f-71f4-40e2-96bd-3171f0658823.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjM2NDQ0MDgsIm5iZiI6MTc2MzY0NDEwOCwicGF0aCI6Ii8yMDE1ODAwMzgvNTE2ODY0ODg2LTdiNTA0YTRmLTcxZjQtNDBlMi05NmJkLTMxNzFmMDY1ODgyMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTEyMFQxMzA4MjhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03OTdiYjFjMmRiOTc1ZjMxMGI2ZDQ3NjVjMDczYWViMGIyMmY4MDU5MTBiMjRlYTQxOTJkZWM5MWY0YWM3MGFjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.QCj_cjITcNFhGDKs5SUTvhrDMtOpwNK1bcjsP6wtB1g)
 
 **🌐 Live Application:** [you-vs-hr.herokuapp.com](https://you-vs-hr-f560f6ced83c.herokuapp.com/)  
 **📁 GitHub Repository:** [github.com/omarazzawi/you-vs-hr](https://github.com/omarazzawi/you-vs-hr)  
@@ -13,6 +13,7 @@ A Django-based platform for job seekers to share and read real experiences with 
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Project digram](#project-digram)
 - [Agile Methodology](#agile-methodology)
 - [User Stories](#user-stories)
 - [Features](#features)
@@ -44,6 +45,9 @@ You VS HR is a transparency platform built exclusively for job seekers to docume
 
 ---
 
+## Project digram
+![You VS HR digram](https://private-user-images.githubusercontent.com/201580038/516880850-b5edd79f-db9d-4b31-bf24-342c1f211732.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjM2NDY1ODQsIm5iZiI6MTc2MzY0NjI4NCwicGF0aCI6Ii8yMDE1ODAwMzgvNTE2ODgwODUwLWI1ZWRkNzlmLWRiOWQtNGIzMS1iZjI0LTM0MmMxZjIxMTczMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTEyMFQxMzQ0NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05MDU2YjVmNzViZjZlMDdhZTRkYzc2Y2VjNGVmOTFmNmM3YjIzOTJhNTk2MjBkZGU1ZDhmZGVmYTQyZjQ5OTllJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.G1lf_SNedTIYmixZQKzF3UdPhlJTxJD5zYcp3HK4yBc)
+
 ## Agile Methodology
 
 This project was developed using Agile methodologies with GitHub Projects as the project management tool.
@@ -64,18 +68,18 @@ The project was developed iteratively with continuous integration and testing. F
 ### GitHub Project Board
 
 All user stories were tracked as GitHub Issues and managed through a Kanban board with columns:
-- **Backlog**: Planned features
 - **To Do**: Ready for development
 - **In Progress**: Currently being worked on
 - **Done**: Completed and tested
+- 
 
 [View the complete project board](https://github.com/users/omarazzawi/projects/11)
 
 ### Agile Reflection
 
-During development, the comment flagging features (User Stories #13, #14) were deprioritized to "Won't Have" to ensure robust implementation of the core comment approval system within the project timeline. This demonstrates real-world Agile scope management and iterative development principles.
+During development, the comment flagging features (User Stories #14) were deprioritized to "Won't Have" to ensure robust implementation of the core comment approval system within the project timeline. This demonstrates real-world Agile scope management and iterative development principles.
 
-All 13 user stories (excluding the 2 Won't Have features) were successfully completed and tested, representing 100% completion of the committed scope for this iteration.
+All 13 user stories were successfully completed and tested, representing 100% completion of the committed scope for this iteration.
 
 ---
 
@@ -502,11 +506,10 @@ Resource
 | Test Case | Device/Size | Expected Result | Actual Result | Pass/Fail |
 |-----------|------------|-----------------|---------------|-----------|
 | Homepage grid - Desktop (1920px) | Desktop browser at full width | 3 story cards per row | As expected | ✅ Pass |
-| Homepage grid - Tablet (768px) | Browser resized to tablet size | 2 story cards per row | As expected | ✅ Pass |
+| Homepage grid - Tablet (768px) | Browser resized to tablet size | 3 story cards per row | As expected | ✅ Pass |
 | Homepage grid - Mobile (375px) | Browser resized to mobile size | 1 story card per row | As expected | ✅ Pass |
 | Navigation - Desktop | Full-width browser | All nav links visible in horizontal row | As expected | ✅ Pass |
-| Navigation - Mobile | Mobile-sized browser | Hamburger menu, collapsible nav | As expected | ✅ Pass |
-| Forms - Mobile | Mobile device | Fields full-width, buttons easy to tap | As expected | ✅ Pass |
+| Navigation - Mobile  Tablet | Mobile & Tablet-sized browser | Hamburger menu, collapsible nav | As expected | ✅ Pass |
 | Footer - All sizes | Various screen sizes | Footer visible at bottom, not covering content | As expected | ✅ Pass |
 
 #### Admin Interface
@@ -574,7 +577,10 @@ comment.author.username
 - **Problem**: Varying content heights causing inconsistent positioning
 - **Solution**: Applied Flexbox with auto margin
 ```css
-
+.card-body {
+    display: flex;
+    flex-direction:column;
+}
 ```
 
 #### 7. Django Import Error
@@ -621,14 +627,20 @@ LOGOUT_REDIRECT_URL = '/'
 - **Problem**: Using 'endfor' inside 'if' block incorrectly
 - **Solution**: Properly closed all template tags
 
-#### 12. About Page White Space Issue
-- **Issue**: Excessive white space on About & Policies page
-- **Problem**: `min-height: 280px` applied to all `.card-body` elements
-- **Solution**: Removed global min-height, applied only to homepage story cards
+#### 12.
 
 ### Validation
 
 #### HTML Validation
+The errors were caused by missing id attributes on the help text elements.  
+
+**Solution** Add id attributes to the help text divs:
+  - Username help text
+  - Password help text
+  - Password confirmation 
+  - ```id="{{ field.id_for_label }}_helptext"```  
+
+ ![htmlValidatorRegistration](https://private-user-images.githubusercontent.com/201580038/516855402-54761e4c-11d7-4e74-8a65-0ec9227ca3fd.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjM2NDMxNjksIm5iZiI6MTc2MzY0Mjg2OSwicGF0aCI6Ii8yMDE1ODAwMzgvNTE2ODU1NDAyLTU0NzYxZTRjLTExZDctNGU3NC04YTY1LTBlYzkyMjdjYTNmZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTEyMFQxMjQ3NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wMjRiYmVmODU1ZTA1OTA3MDJhMzZiZGVkOTc3NDIyZmRiODJkOTVkNzFlN2VlZWYzMDZlYWVlNWZiZTU3ZjgwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.3HsO3oNdwLbqYnmVx5-lW_wqfeOdN4W8Wub-3y6mnSg)
 
 #### CSS Validation
 - No Error founded
@@ -711,7 +723,6 @@ os.environ.setdefault("DEBUG", "True")  # False for production
    ```bash
    python -m venv my_env_312
    my_env_312\Scripts\activate  # Windows
-   source my_env_312/bin/activate  # Mac/Linux
    ```
 
 3. **Install Dependencies**
@@ -775,15 +786,17 @@ os.environ.setdefault("DEBUG", "True")  # False for production
 - **Spencer Barriball** - Code Institute Mentor
   - Project guidance and validation advice
   - Code review and best practices
+  - Error handling
+  - Recommended books
 
 - **Code-Institute Django Reference Guide** 
   - Project foundation
-- **Assessment Insights: PP4: What our Assessors Wish You Knew**[LucyRCode-Institut] (https://events.codeinstitute.net/events/details/code-institute-events-hub-presents-assessment-insights-pp4-what-our-assessors-wish-you-knew/)
+- **Assessment Insights: PP4: What our Assessors Wish You Knew**  [LucyRush Code-Institut](https://events.codeinstitute.net/events/details/code-institute-events-hub-presents-assessment-insights-pp4-what-our-assessors-wish-you-knew/)
 
 ## Author
 
 **Omar Al-Azzawi**  
-Full Stack Developer in Training  
+Full Stack Developer Student
 [GitHub](https://github.com/omarazzawi) | [LinkedIn](https://www.linkedin.com/in/omar-alazzawi/) 
 
 ---
