@@ -2,7 +2,7 @@
 
 A Django-based platform for job seekers to share and read real experiences with recruiters, HR departments, and hiring processes.
 
-![You VS HR Homepage](https://private-user-images.githubusercontent.com/201580038/516864886-7b504a4f-71f4-40e2-96bd-3171f0658823.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjM2NDQ0MDgsIm5iZiI6MTc2MzY0NDEwOCwicGF0aCI6Ii8yMDE1ODAwMzgvNTE2ODY0ODg2LTdiNTA0YTRmLTcxZjQtNDBlMi05NmJkLTMxNzFmMDY1ODgyMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTEyMFQxMzA4MjhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03OTdiYjFjMmRiOTc1ZjMxMGI2ZDQ3NjVjMDczYWViMGIyMmY4MDU5MTBiMjRlYTQxOTJkZWM5MWY0YWM3MGFjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.QCj_cjITcNFhGDKs5SUTvhrDMtOpwNK1bcjsP6wtB1g)
+![You VS HR Homepage](/docs/images/youVsHr.png)
 
 **🌐 Live Application:** [you-vs-hr.herokuapp.com](https://you-vs-hr-f560f6ced83c.herokuapp.com/)  
 **📁 GitHub Repository:** [github.com/omarazzawi/you-vs-hr](https://github.com/omarazzawi/you-vs-hr)  
@@ -14,6 +14,8 @@ A Django-based platform for job seekers to share and read real experiences with 
 
 - [Introduction](#introduction)
 - [Project digram](#project-digram)
+- [Project Structure](#project-structure)
+- [Color Palette](#color-palette)
 - [Agile Methodology](#agile-methodology)
 - [User Stories](#user-stories)
 - [Features](#features)
@@ -46,7 +48,16 @@ You VS HR is a transparency platform built exclusively for job seekers to docume
 ---
 
 ## Project digram
-![You VS HR digram](https://private-user-images.githubusercontent.com/201580038/516880850-b5edd79f-db9d-4b31-bf24-342c1f211732.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjM2NDY1ODQsIm5iZiI6MTc2MzY0NjI4NCwicGF0aCI6Ii8yMDE1ODAwMzgvNTE2ODgwODUwLWI1ZWRkNzlmLWRiOWQtNGIzMS1iZjI0LTM0MmMxZjIxMTczMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTEyMFQxMzQ0NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05MDU2YjVmNzViZjZlMDdhZTRkYzc2Y2VjNGVmOTFmNmM3YjIzOTJhNTk2MjBkZGU1ZDhmZGVmYTQyZjQ5OTllJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.G1lf_SNedTIYmixZQKzF3UdPhlJTxJD5zYcp3HK4yBc)
+![You VS HR digram](/docs/images/projectDigram.png)   
+
+
+## Color Palette
+
+![Color Palette](/docs/images/colorPalette.png)
+
+
+## Project Structure  
+![Project Structure](/docs/images/projectStructure.png)
 
 ## Agile Methodology
 
@@ -640,13 +651,13 @@ The errors were caused by missing id attributes on the help text elements.
   - Password confirmation 
   - ```id="{{ field.id_for_label }}_helptext"```  
 
- ![htmlValidatorRegistration](https://private-user-images.githubusercontent.com/201580038/516855402-54761e4c-11d7-4e74-8a65-0ec9227ca3fd.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjM2NDMxNjksIm5iZiI6MTc2MzY0Mjg2OSwicGF0aCI6Ii8yMDE1ODAwMzgvNTE2ODU1NDAyLTU0NzYxZTRjLTExZDctNGU3NC04YTY1LTBlYzkyMjdjYTNmZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTEyMFQxMjQ3NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wMjRiYmVmODU1ZTA1OTA3MDJhMzZiZGVkOTc3NDIyZmRiODJkOTVkNzFlN2VlZWYzMDZlYWVlNWZiZTU3ZjgwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.3HsO3oNdwLbqYnmVx5-lW_wqfeOdN4W8Wub-3y6mnSg)
+ ![htmlValidatorRegistration](/docs/images/htmlValidatorRegistration.png)
 
 #### CSS Validation
 - No Error founded
 #### Python PEP8 Compliance
 - All clear, no errors found
-  ![PEP8](https://private-user-images.githubusercontent.com/201580038/514935705-5bfb9131-abe9-4014-afbb-1b41dcd60c3c.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjM2NzkyMTIsIm5iZiI6MTc2MzY3ODkxMiwicGF0aCI6Ii8yMDE1ODAwMzgvNTE0OTM1NzA1LTViZmI5MTMxLWFiZTktNDAxNC1hZmJiLTFiNDFkY2Q2MGMzYy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTEyMFQyMjQ4MzJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hMmE5MTdkMmRlMjYyODkyNDg1NzRhN2IyZDM4Y2UwZGNhMjBlMzRlOWI4M2UwYjU4MTJhZjlkMjBlYzFjZjY5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.VH_S8gGgk78T_RypDLJ6iHCmJmlwVtsgs1Vv1o7yigY)
+  ![PEP8](/docs/images/PEP8CI.png)
   
 
 #### Accessibility
