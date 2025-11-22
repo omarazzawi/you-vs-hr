@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # IMPORTANT DEPLOYMENT NOTES:
 # - Set DEBUG = False before pushing to GitHub or deploying
 # - Update ALLOWED_HOSTS with your domain when DEBUG = False
