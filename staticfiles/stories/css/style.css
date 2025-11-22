@@ -1,5 +1,12 @@
-/* You VS HR - Cleaned CSS */
+/* ========================================
+   YOU VS HR - MAIN STYLESHEET
+   ======================================== */
+
+/* ========================================
+   1. IMPORTS & CSS VARIABLES
+   ======================================== */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #0d5a8a; 
@@ -8,28 +15,41 @@
 }
 
 
+/* ========================================
+   2. BASE STYLES
+   ======================================== */
+
 body {
     font-family: 'Roboto', sans-serif;
-    font-weight: 400; /* Regular for body text */
+    font-weight: 400;
     background-color: #f8f9fa;
 }
 
-h1, h2, h3,.navbar-brand {
-    font-weight: 700; /* Bold for headings */
+/* Typography */
+h1, h2, h3, .navbar-brand {
+    font-weight: 700;
 }
 
 h2 {
-    font-size: 150% ;
+    font-size: 150%;
 }
 
 .lead, .card-title {
-    font-weight: 500; /* Medium for emphasis */
+    font-weight: 500;
 }
 
 small, .text-muted {
-    font-weight: 300; /* Light for secondary text */
+    font-weight: 300;
 }
-   
+
+
+/* ========================================
+   3. NAVIGATION
+   ======================================== */
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
 .navbar-brand {
     font-size: 2rem;
@@ -37,30 +57,31 @@ small, .text-muted {
     color: whitesmoke;
 }
 
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
 .nav-link.active {
     border-bottom: 3px solid #f8f9fa;
     padding-bottom: 0.3rem;
 }
 
-/* SIMPLIFIED card styles - removed problematic properties */
+
+/* ========================================
+   4. CARDS (Global Styles)
+   ======================================== */
+
 .card {
-    transition: transform 0.2s, box-shadow 0.2s;
     border: none;
     border-radius: 19px;
-}
-
-.card-body {
-    display: flex;
-    flex-direction:column;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: fadeIn 0.5s ease-in;
 }
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
 }
 
 .card-title {
@@ -72,6 +93,11 @@ small, .text-muted {
     color: #555;
     line-height: 1.6;
 }
+
+
+/* ========================================
+   5. BUTTONS
+   ======================================== */
 
 .btn-primary {
     background-color: var(--secondary-color);
@@ -85,15 +111,28 @@ small, .text-muted {
     border-color: #2980b9;
 }
 
-/* Resources page styling */
+
+/* ========================================
+   6. PAGE-SPECIFIC STYLES
+   ======================================== */
+
+/* --- Resources Page --- */
+.resources-page .card {
+    background: #f8f9fa; 
+}
+
+.resources-page .card-body {
+    background: white;
+}
+
 .resources-page .card-header {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
     padding: 1.5rem;
 }
 
 .resources-page .card-header h3 {
     font-weight: 700;
     font-size: 1.5rem;
+    color: white;
 }
 
 .resources-page h5 a {
@@ -107,55 +146,82 @@ small, .text-muted {
     color: #3498db;
 }
 
+/* Resource Category Colors */
 .resources-page .card:nth-child(2) .card-header {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important; /* Dark blue-gray */
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
 }
 
 .resources-page .card:nth-child(3) .card-header {
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%) !important; /* Sky blue */
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%) !important;
 }
 
 .resources-page .card:nth-child(4) .card-header {
-    background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%) !important; /* Gray */
+    background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%) !important;
 }
 
 .resources-page .card:nth-child(5) .card-header {
-    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%) !important; /* Light blue */
+    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%) !important;
 }
 
-.resources-page .card {
-    background: #f8f9fa; /* Whitesmoke background */
+/* --- About & Policies Page --- */
+
+/* Mission - Navy Blue */
+.about-content .bg-success {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+    color: white !important;
 }
 
-.resources-page .card-body {
-    background: white;
+/* Guidelines - Teal */
+.about-content .bg-info {
+    background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%) !important;
+    color: white !important;
 }
 
-/* Footer text color */
-footer {
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-    font-size: 1.25rem;
-}
-footer .container p {
-    color: #f8f9fa;
+/* Privacy - Purple */
+.about-content .bg-warning {
+    background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%) !important;
+    color: white !important;
 }
 
-
-.display-4 {
-    color: var(--primary-color);
+/* Terms - Crimson */
+.about-content .bg-danger {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%) !important;
+    color: white !important;
 }
 
-/* Responsive adjustments */
 
+/* ========================================
+   7. ANIMATIONS
+   ======================================== */
 
-@media (max-width: 425px) {
-
-    h2 {
-        font-size: 80% !important;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
 
+/* ========================================
+   8. RESPONSIVE DESIGN
+   ======================================== */
+
+/* Mobile - Small devices (≤425px) */
+@media (max-width: 425px) {
+    h2 {
+        font-size: 80% !important;
+    }
+    footer { 
+        font-size: 70%;
+
+    }
+}
+
+/* Tablet - Medium devices (≤768px) */
 @media (max-width: 768px) {
     .card-title {
         font-size: 1rem;
@@ -166,7 +232,7 @@ footer .container p {
     }
 }
 
-/* Mobile and tablet - show arrow instead of border */
+/* Mobile & Tablet Navigation (≤991px) */
 @media (max-width: 991px) {
     .nav-link.active {
         border-bottom: none;
@@ -185,22 +251,11 @@ footer .container p {
         height: 0;
         border-top: 6px solid transparent;
         border-bottom: 6px solid transparent;
-        border-left: 8px solid #f8f9fa
+        border-left: 8px solid #f8f9fa;
     }
 }
 
-/* Loading and animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-.card {
-    animation: fadeIn 0.5s ease-in;
-}
+/* ========================================
+   END OF STYLESHEET
+   ======================================== */
