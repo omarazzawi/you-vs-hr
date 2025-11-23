@@ -208,7 +208,7 @@ All 13 user stories were successfully completed and tested, representing 100% co
 
 ### Epic: Static Pages
 
-**#16 - About & Policies Page**
+**#17 - About & Policies Page**
 > As a visitor, I can view the About & Policy page so that I understand the site's purpose and rules
 
 **Acceptance Criteria:**
@@ -220,7 +220,7 @@ All 13 user stories were successfully completed and tested, representing 100% co
 - Page is accessible from navigation menu
 - Page is responsive on all devices
 
-**#17 - Resources Page**
+**#18 - Resources Page**
 > As a visitor, I can view a page with useful links and resources so that I can access job search platforms, career advice, and professional development tools
 
 **Acceptance Criteria:**

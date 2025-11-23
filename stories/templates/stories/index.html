@@ -1,5 +1,9 @@
 {% extends 'stories/base.html' %}
 
+{% block meta_description %}
+Read real recruitment horror stories and job interview experiences shared by job seekers. Discover honest accounts of HR departments, recruiter practices, and hiring processes gone wrong.
+{% endblock %}
+
 {% block title %}Home - Recruitment Horror Stories{% endblock %}
 
 {% block content %}
@@ -34,7 +38,7 @@
         <h4>No stories yet!</h4>
         <p>Be the first to share your recruitment experience.</p>
         {% if user.is_authenticated %}
-            <a href="#" class="btn btn-primary">Share Your Story</a>
+            <a href="{% url 'story_create' %}" class="btn btn-primary">Share Your Story</a>
         {% else %}
             <a href="{% url 'register' %}" class="btn btn-primary">Register to Share</a>
         {% endif %}
