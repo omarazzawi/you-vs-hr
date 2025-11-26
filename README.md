@@ -638,7 +638,10 @@ LOGOUT_REDIRECT_URL = '/'
 - **Problem**: Using 'endfor' inside 'if' block incorrectly
 - **Solution**: Properly closed all template tags
 
-#### 12.
+#### 12. Missing Meta Descriptions for SEO
+- **Issue**: No meta descriptions on any pages
+- **Problem**: Search engines couldn't properly index and display page content in search results
+- **Solution**: Added meta description block to base.html with ability to override per page using `{% block meta_description %}`
 
 ### Validation
 
@@ -660,7 +663,8 @@ The errors were caused by missing id attributes on the help text elements.
   ![PEP8](/docs/images/PEP8CI.png)
   
 
-#### Accessibility
+#### Lighthouse Test  
+![lighthouse](/docs/images/lightHouse.png)
 
 
 ---
