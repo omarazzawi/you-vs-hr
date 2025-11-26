@@ -71,7 +71,10 @@ ROOT_URLCONF = 'youvshr.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'stories' / 'templates',
+            BASE_DIR / 'pages' / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

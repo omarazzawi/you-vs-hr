@@ -13,7 +13,7 @@ A Django-based platform for job seekers to share and read real experiences with 
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Project digram](#project-digram)
+- [Project diagram](#project-diagram)
 - [Project Structure](#project-structure)
 - [Color Palette](#color-palette)
 - [Agile Methodology](#agile-methodology)
@@ -47,8 +47,8 @@ You VS HR is a transparency platform built exclusively for job seekers to docume
 
 ---
 
-## Project digram
-![You VS HR digram](/docs/images/projectDigram.png)   
+## Project diagram
+![You VS HR diagram](/docs/images/projectDiagram.png)   
 
 
 ## Color Palette
@@ -82,7 +82,6 @@ All user stories were tracked as GitHub Issues and managed through a Kanban boar
 - **To Do**: Ready for development
 - **In Progress**: Currently being worked on
 - **Done**: Completed and tested
-- 
 
 [View the complete project board](https://github.com/users/omarazzawi/projects/11)
 
